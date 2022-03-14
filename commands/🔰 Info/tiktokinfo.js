@@ -21,7 +21,7 @@ module.exports = {
             const posts = await TikTokScraper.user(args.join(" "), {
                 number: 5,
             });
-            if(!posts.collector[0]) return message.reply("<:no:833101993668771842> NOT FOUND / No Posts!") 
+            if(!posts.collector[0]) return message.reply("<a:Deny:863000078690811905> **NOT FOUND / No Posts!**") 
             author = posts.collector[0].authorMeta;
             var embed = new Discord.MessageEmbed()
             .setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)

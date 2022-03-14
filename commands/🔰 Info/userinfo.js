@@ -60,7 +60,7 @@ module.exports = {
       }else{
         user = message.author;
       }
-      if(!user || user == null || user.id == null || !user.id) return message.reply("<:no:833101993668771842> Could not find the USER")
+      if(!user || user == null || user.id == null || !user.id) return message.reply("<a:Deny:863000078690811905> Could Not Find The USER")
       try{
         const member = message.guild.members.cache.get(user.id);
         const roles = member.roles;
@@ -69,29 +69,29 @@ module.exports = {
         //create the EMBED
         const embeduserinfo = new MessageEmbed()
         embeduserinfo.setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
-        embeduserinfo.setAuthor("Information about:   " + member.user.username + "#" + member.user.discriminator, member.user.displayAvatarURL({ dynamic: true }), "https://discord.gg/FQGXbypRf8")
-        embeduserinfo.addField('**<:arrow:832598861813776394> Username:**',`<@${member.user.id}>\n\`${member.user.tag}\``,true)
-        embeduserinfo.addField('**<:arrow:832598861813776394> ID:**',`\`${member.id}\``,true)
-        embeduserinfo.addField('**<:arrow:832598861813776394> Avatar:**',`[\`Link to avatar\`](${member.user.displayAvatarURL({ format: "png" })})`,true)
-        embeduserinfo.addField('**<:arrow:832598861813776394> Date Join DC:**', "\`"+moment(member.user.createdTimestamp).format("DD/MM/YYYY") + "\`\n" + "`"+ moment(member.user.createdTimestamp).format("hh:mm:ss") + "\`",true)
-        embeduserinfo.addField('**<:arrow:832598861813776394> Date Join Guild:**', "\`"+moment(member.joinedTimestamp).format("DD/MM/YYYY") + "\`\n" + "`"+ moment(member.joinedTimestamp).format("hh:mm:ss")+ "\`",true)
-        embeduserinfo.addField('**<:arrow:832598861813776394> Flags:**',`\`${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}\``,true)
-        embeduserinfo.addField('**<:arrow:832598861813776394> Status:**',`\`${statuses[member.user.presence.status]} ${member.user.presence.status}\``,true)
-        embeduserinfo.addField('**<:arrow:832598861813776394> Highest Role:**',`${member.roles.highest.id === message.guild.id ? 'None' : member.roles.highest}`,true)
-        embeduserinfo.addField('**<:arrow:832598861813776394> Is a Bot:**',`\`${member.user.bot ? "✔️" : "❌"}\``,true)
-        var userstatus = "Not having an activity";
+        embeduserinfo.setAuthor("Information about:   " + member.user.username + "#" + member.user.discriminator, member.user.displayAvatarURL({ dynamic: true }), "https://discord.gg/sakshyam")
+        embeduserinfo.addField('**<:dot:863291467879153716> Username:**',`<@${member.user.id}>\n\`${member.user.tag}\``,true)
+        embeduserinfo.addField('**<:dot:863291467879153716> ID:**',`\`${member.id}\``,true)
+        embeduserinfo.addField('**<:dot:863291467879153716> Avatar:**',`[\`Link to avatar\`](${member.user.displayAvatarURL({ format: "png" })})`,true)
+        embeduserinfo.addField('**<:dot:863291467879153716> Date Join DC:**', "\`"+moment(member.user.createdTimestamp).format("DD/MM/YYYY") + "\`\n" + "`"+ moment(member.user.createdTimestamp).format("hh:mm:ss") + "\`",true)
+        embeduserinfo.addField('**<:dot:863291467879153716> Date Join Guild:**', "\`"+moment(member.joinedTimestamp).format("DD/MM/YYYY") + "\`\n" + "`"+ moment(member.joinedTimestamp).format("hh:mm:ss")+ "\`",true)
+        embeduserinfo.addField('**<:dot:863291467879153716> Flags:**',`\`${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}\``,true)
+        embeduserinfo.addField('**<:dot:863291467879153716> Status:**',`\`${statuses[member.user.presence.status]} ${member.user.presence.status}\``,true)
+        embeduserinfo.addField('**<:dot:863291467879153716> Highest Role:**',`${member.roles.highest.id === message.guild.id ? 'None' : member.roles.highest}`,true)
+        embeduserinfo.addField('**<:dot:863291467879153716> Is a Bot:**',`\`${member.user.bot ? "✔️" : "❌"}\``,true)
+        var userstatus = "Not Having An Activity";
         if(activity){
           if(activity.type === "CUSTOM_STATUS"){
             let emoji = `${activity.emoji ? activity.emoji.id ? `<${activity.emoji.animated ? "a": ""}:${activity.emoji.name}:${activity.emoji.id}>`: activity.emoji.name : ""}`
-            userstatus = `${emoji} \`${activity.state || 'Not having an acitivty.'}\``
+            userstatus = `${emoji} \`${activity.state || 'Not Having An Acitivty.'}\``
           }
           else{
             userstatus = `\`${activity.type.toLowerCase().charAt(0).toUpperCase() + activity.type.toLowerCase().slice(1)} ${activity.name}\``
           }
         }
-        embeduserinfo.addField('**<:arrow:832598861813776394> Activity:**',`${userstatus}`)
-        embeduserinfo.addField('**<:arrow:832598861813776394> Permissions:**',`${message.member.permissions.toArray().map(p=>`\`${p}\``).join(", ")}`)
-        embeduserinfo.addField(`<:arrow:832598861813776394> [${roles.cache.size}] Roles: `, roles.cache.size < 25 ? roles.cache.array().sort((a, b) => b.rawPosition - a.rawPosition).map(role => `<@&${role.id}>`).join(', ') : roles.cache.size > 25 ? trimArray(roles.cache) : 'None')
+        embeduserinfo.addField('**<:dot:863291467879153716> Activity:**',`${userstatus}`)
+        embeduserinfo.addField('**<:dot:863291467879153716> Permissions:**',`${message.member.permissions.toArray().map(p=>`\`${p}\``).join(", ")}`)
+        embeduserinfo.addField(`<:dot:863291467879153716> [${roles.cache.size}] Roles: `, roles.cache.size < 25 ? roles.cache.array().sort((a, b) => b.rawPosition - a.rawPosition).map(role => `<@&${role.id}>`).join(', ') : roles.cache.size > 25 ? trimArray(roles.cache) : 'None')
         embeduserinfo.setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)
         embeduserinfo.setFooter(es.footertext, es.footericon)
         //send the EMBED

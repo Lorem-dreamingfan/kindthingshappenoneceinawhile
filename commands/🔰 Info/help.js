@@ -62,47 +62,43 @@ module.exports = {
           }
           return message.channel.send(embed)
         }
-        if (cmd.name) embed.addField("**<a:jumpheart:862765468052881409> Message #general Command name**", `\`${cmd.name}\``);
-        if (cmd.name) embed.setTitle(`<a:jumpheart:862765468052881409> Detailed Information about: \`${cmd.name}\``);
-        if (cmd.description) embed.addField("**<a:jumpheart:862765468052881409> Description**", `\`\`\`${cmd.description}\`\`\``);
+        if (cmd.name) embed.addField("**<:arrow:832598861813776394> Command name**", `\`${cmd.name}\``);
+        if (cmd.name) embed.setTitle(`<:arrow:832598861813776394> Detailed Information about: \`${cmd.name}\``);
+        if (cmd.description) embed.addField("**<:arrow:832598861813776394> Description**", `\`\`\`${cmd.description}\`\`\``);
         if (cmd.aliases) try {
-          embed.addField("**<a:jumpheart:862765468052881409> Aliases**", `\`${cmd.aliases.map((a) => `${a}`).join("`, `")}\``);
+          embed.addField("**<:arrow:832598861813776394> Aliases**", `\`${cmd.aliases.map((a) => `${a}`).join("`, `")}\``);
         } catch {}
-        if (cmd.cooldown) embed.addField("**<a:jumpheart:862765468052881409> Cooldown**", `\`\`\`${cmd.cooldown} Seconds\`\`\``);
-        else embed.addField("**<a:jumpheart:862765468052881409> Cooldown**", `\`\`\`3 Seconds\`\`\``);
+        if (cmd.cooldown) embed.addField("**<:arrow:832598861813776394> Cooldown**", `\`\`\`${cmd.cooldown} Seconds\`\`\``);
+        else embed.addField("**<:arrow:832598861813776394> Cooldown**", `\`\`\`3 Seconds\`\`\``);
         if (cmd.usage) {
-          embed.addField("**<a:jumpheart:862765468052881409> Usage**", `\`\`\`${config.prefix}${cmd.usage}\`\`\``);
+          embed.addField("**<:arrow:832598861813776394> Usage**", `\`\`\`${config.prefix}${cmd.usage}\`\`\``);
           embed.setFooter("Syntax: <> = required, [] = optional", es.footericon);
         }
         if (cmd.useage) {
-          embed.addField("**<a:jumpheart:862765468052881409> Useage**", `\`\`\`${config.prefix}${cmd.useage}\`\`\``);
+          embed.addField("**<:arrow:832598861813776394> Useage**", `\`\`\`${config.prefix}${cmd.useage}\`\`\``);
           embed.setFooter("Syntax: <> = required, [] = optional", es.footericon);
         }
         return message.channel.send(embed);
       } else {
-        let button_back = new MessageButton().setStyle('green').setID('1').setLabel("<<")
-        let button_home = new MessageButton().setStyle('blurple').setID('2').setLabel("🏠") 
-        let button_forward = new MessageButton().setStyle('green').setID('3').setLabel('>>') 
-        let button_dc = new MessageButton().setStyle('url').setLabel('Join Our Support Server!').setURL("https://discord.com/invite/sakshyam")
-        let button_invite = new MessageButton().setStyle('url').setLabel('Invite The Bot').setURL("https://discord.com/oauth2/authorize?client_id=859864681737093140&permissions=8&scope=bot")
+        let button_back = new MessageButton().setStyle('red').setID('1').setLabel("<<")
+        let button_home = new MessageButton().setStyle('red').setID('2').setLabel("🏠") 
+        let button_forward = new MessageButton().setStyle('red').setID('3').setLabel('>>') 
+        let button_cat_information = new MessageButton().setStyle('red').setID('button_cat_information').setLabel('​').setEmoji("🔰")
+        let button_cat_music = new MessageButton().setStyle('red').setID('button_cat_music').setLabel('​').setEmoji("🎶")
+        let button_cat_settings = new MessageButton().setStyle('red').setID('button_cat_settings').setLabel('👑').setEmoji("")
         
-        let button_cat_information = new MessageButton().setStyle('blurple').setID('button_cat_information').setLabel('​Information').setEmoji("🔰")
-        let button_cat_music = new MessageButton().setStyle('blurple').setID('button_cat_music').setLabel('​Music Related').setEmoji("🎶")
-        let button_cat_settings = new MessageButton().setStyle('blurple').setID('button_cat_settings').setLabel('​Settings & 👑 Owner & ⌨️Programming').setEmoji("⚙")
+        let button_cat_voice = new MessageButton().setStyle('red').setID('button_cat_voice').setLabel('').setEmoji("💠")
+        let button_cat_minigames = new MessageButton().setStyle('red').setID('button_cat_minigames').setLabel('🕹').setEmoji("")
+        let button_cat_admin = new MessageButton().setStyle('red').setID('button_cat_admin').setLabel('').setEmoji("🌀") 
         
-        let button_cat_voice = new MessageButton().setStyle('blurple').setID('button_cat_voice').setLabel('Voice & 📈 Ranking').setEmoji("🎤")
-        let button_cat_minigames = new MessageButton().setStyle('blurple').setID('button_cat_minigames').setLabel('​Mini Games & 🕹️ Fun').setEmoji("🎮")
-        let button_cat_admin = new MessageButton().setStyle('blurple').setID('button_cat_admin').setLabel('Administration & 💪 Setup').setEmoji("🚫") 
-        
-        let button_cat_nsfw = new MessageButton().setStyle('blurple').setID('button_cat_nsfw').setLabel('​NSFW').setEmoji("🔞")
-        let button_cat_customcommand = new MessageButton().setStyle('blurple').setID('button_cat_customcommand').setLabel('​Custom Commands').setEmoji("🦾")
-        let button_cat_advertisement = new MessageButton().setStyle('blurple').setID('button_cat_advertisement').setLabel('​Advertisement').setEmoji("840259659163893820")
+        let button_cat_nsfw = new MessageButton().setStyle('red').setID('button_cat_nsfw').setLabel('').setEmoji("🔞")
+        let button_cat_customcommand = new MessageButton().setStyle('red').setID('button_cat_customcommand').setLabel('').setEmoji("🦾")
+        let button_cat_advertisement = new MessageButton().setStyle('red').setID('button_cat_advertisement').setLabel('').setEmoji("🎭")
         //array of all buttons
         
 
         let buttonRow1 = new MessageActionRow()
           .addComponent(button_back).addComponent(button_home).addComponent(button_forward)
-          .addComponent(button_dc).addComponent(button_invite)
         let buttonRow2 = new MessageActionRow()
           .addComponent(button_cat_information).addComponent(button_cat_music)
           .addComponent(button_cat_settings)
@@ -115,18 +111,32 @@ module.exports = {
         //define default embed
         let FIRSTEMBED = new MessageEmbed()
         .setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)
-        .setFooter("Page Home\n"+ client.user.username + " | ", client.user.displayAvatarURL())
-        .setTitle(`Information About The __**${client.user.username}**__`)
-        .addField(":muscle: **__My Features__**",
-`>>> **58+ Systems**, Like: <:Twitter:862997206772088852> **Twitter-** & <:YouTube:862997075833651211> **Youtube Auto Poster** 
-**Application-**, Ticket-, **Welcome-Images-** and Reaction Role-, ... Systems
-:notes: An advanced <:Spotify:846090652231663647> **Music System** with **Audio Filtering**
-:video_game: Many **Minigames** and :joystick: **Fun** Commands (150+)
-:no_entry_sign: **Administration** and **Auto-Moderation** and way much more!`)
-        .addField(":question: **__How do you use me?__**",
-`>>> \`${prefix}setup\` And React With The Emoji For The Right Action,
+        .setFooter("Page Home\n"+ client.user.username + " | Made by: Tomato#6966", client.user.displayAvatarURL())
+        .setTitle(`Information about the __**${client.user.username}**__`)
+        .addField("**__My Features__**",
+`>>> **__Help Menu__**, 
+✅ ... Overview
+
+
+
+🔰 ... Information
+🎶 ... Music Related
+:crown: ... Settings & Owner & Programming
+💠 ... Voice &  Ranking
+🕹 ... Mini Games & joystick Fun
+ 🌀 ... Administration & muscle Setup
+🔞 ... NSFW
+ :mechanical_arm: ... Custom Commands
+🎭 ... Advertisement
+
+
+
+**Click on the Button Emojis to jump to the Command Category**
+**Use the Arrows to swap the Pages forward/backward/jump-back-home** `)
+        .addField("**__How do you use me?__**",
+`>>> \`${prefix}setup\` and react with the Emoji for the right action,
 but you can also do \`${prefix}setup-SYSTEM\` e.g. \`${prefix}setup-welcome\``)
-.addField(":chart_with_upwards_trend: **__STATS:__**",
+.addField("**__STATS:__**",
 `>>> :gear: **${client.commands.map(a=>a).length} Commands**
 :file_folder: on **${client.guilds.cache.size} Guilds**
 ⌚️ **${duration(client.uptime).map(i=> `\`${i}\``).join(", ")} Uptime**
@@ -134,7 +144,7 @@ but you can also do \`${prefix}setup-SYSTEM\` e.g. \`${prefix}setup-welcome\``)
 
         //Send message with buttons
         let helpmsg = await message.channel.send({   
-            content: `***Click On The __Buttons__ To Swap The Help-Pages***`,
+            content: `***Click on the __Buttons__ to swap the Help-Pages***`,
             embed: FIRSTEMBED, 
             components: allbuttons
         });
@@ -148,7 +158,7 @@ but you can also do \`${prefix}setup-SYSTEM\` e.g. \`${prefix}setup-welcome\``)
         let currentPage = 0;
         collector.on('collect', async b => {
             if(b.clicker.user.id !== message.author.id)
-              return b.reply.send(`<a:Deny:863000078690811905> **Only The One Who Typed ${prefix}help Is Allowed To React!**`)
+              return b.reply.send(`:x: **Only the one who typed ${prefix}help is allowed to react!**`)
             if(b.id.includes("button_cat_")){
               //b.reply.send(`***Going to the ${b.id.replace("button_cat_", "")} Page***, *please wait 2 Seconds for the next Input*`, true)
               //information, music, admin, settings, voice, minigames, nsfw
@@ -203,29 +213,25 @@ but you can also do \`${prefix}setup-SYSTEM\` e.g. \`${prefix}setup-welcome\``)
             }
         });
         
-        let d_button_back = new MessageButton().setStyle('green').setID('1').setLabel("<<").setDisabled(true);
-        let d_button_home = new MessageButton().setStyle('blurple').setID('2').setLabel("🏠").setDisabled(true);
-        let d_button_forward = new MessageButton().setStyle('green').setID('3').setLabel('>>').setDisabled(true);
-        let d_button_dc = new MessageButton().setStyle('url').setLabel('Support Server!').setURL("https://discord.com/invite/sakshyam");
-        let d_button_invite = new MessageButton().setStyle('url').setLabel('NotSakshyam').setURL("https://discord.com/invite/sakshyam");
+        let d_button_back = new MessageButton().setStyle('red').setID('1').setLabel("<<").setDisabled(true);
+        let d_button_home = new MessageButton().setStyle('red').setID('2').setLabel("🏠").setDisabled(true);
+        let d_button_forward = new MessageButton().setStyle('red').setID('3').setLabel('>>').setDisabled(true);
+        let d_button_cat_information = new MessageButton().setStyle('red').setID('button_cat_information').setLabel('​').setEmoji("🔰").setDisabled(true);
+        let d_button_cat_music = new MessageButton().setStyle('red').setID('button_cat_music').setLabel('').setEmoji("🎶").setDisabled(true);
+        let d_button_cat_settings = new MessageButton().setStyle('red').setID('button_cat_settings').setLabel('👑').setEmoji("").setDisabled(true);
         
-        let d_button_cat_information = new MessageButton().setStyle('blurple').setID('button_cat_information').setLabel('​Information').setEmoji("🔰").setDisabled(true);
-        let d_button_cat_music = new MessageButton().setStyle('blurple').setID('button_cat_music').setLabel('​Music Related').setEmoji("🎶").setDisabled(true);
-        let d_button_cat_settings = new MessageButton().setStyle('blurple').setID('button_cat_settings').setLabel('​Settings & 👑 Owner & ⌨️Programming').setEmoji("⚙").setDisabled(true);
+        let d_button_cat_voice = new MessageButton().setStyle('red').setID('button_cat_voice').setLabel('').setEmoji("💠").setDisabled(true);
+        let d_button_cat_minigames = new MessageButton().setStyle('red').setID('button_cat_minigames').setLabel('🕹').setEmoji("").setDisabled(true);
+        let d_button_cat_admin = new MessageButton().setStyle('red').setID('button_cat_admin').setLabel('').setEmoji("🌀") .setDisabled(true);
         
-        let d_button_cat_voice = new MessageButton().setStyle('blurple').setID('button_cat_voice').setLabel('Voice & 📈 Ranking').setEmoji("🎤").setDisabled(true);
-        let d_button_cat_minigames = new MessageButton().setStyle('blurple').setID('button_cat_minigames').setLabel('​Mini Games & 🕹️ Fun').setEmoji("🎮").setDisabled(true);
-        let d_button_cat_admin = new MessageButton().setStyle('blurple').setID('button_cat_admin').setLabel('Administration & 💪 Setup').setEmoji("🚫") .setDisabled(true);
-        
-        let d_button_cat_nsfw = new MessageButton().setStyle('blurple').setID('button_cat_nsfw').setLabel('​NSFW').setEmoji("🔞").setDisabled(true);
-        let d_button_cat_customcommand = new MessageButton().setStyle('blurple').setID('button_cat_customcommand').setLabel('​Custom Commands').setEmoji("🦾").setDisabled(true);
-        let d_button_cat_advertisement = new MessageButton().setStyle('blurple').setID('button_cat_advertisement').setLabel('Luna').setEmoji("840259659163893820").setDisabled(true);
+        let d_button_cat_nsfw = new MessageButton().setStyle('red').setID('button_cat_nsfw').setLabel('').setEmoji("🔞").setDisabled(true);
+        let d_button_cat_customcommand = new MessageButton().setStyle('red').setID('button_cat_customcommand').setLabel('').setEmoji("🦾").setDisabled(true);
+        let d_button_cat_advertisement = new MessageButton().setStyle('blurple').setID('button_cat_advertisement').setLabel('').setEmoji("🎭").setDisabled(true);
         //array of all buttons
         
 
         let d_buttonRow1 = new MessageActionRow()
           .addComponent(d_button_back).addComponent(d_button_home).addComponent(d_button_forward)
-          .addComponent(d_button_dc).addComponent(d_button_invite)
         let d_buttonRow2 = new MessageActionRow()
           .addComponent(d_button_cat_information).addComponent(d_button_cat_music)
           .addComponent(d_button_cat_settings)
@@ -237,11 +243,11 @@ but you can also do \`${prefix}setup-SYSTEM\` e.g. \`${prefix}setup-welcome\``)
         const alldisabledbuttons = [d_buttonRow1, d_buttonRow2, d_buttonRow3, d_buttonRow4]
         collector.on('end', collected => {
           edited = true;
-          helpmsg.edit({content: `Time Has Ended Type ${prefix}help Again!`, embed: helpmsg.embeds[0], components: alldisabledbuttons})
+          helpmsg.edit({content: `Time has ended type ${prefix}help again!`, embed: helpmsg.embeds[0], components: alldisabledbuttons})
         });
         setTimeout(()=>{
           if(!edited)
-            helpmsg.edit({content: `Time Has Ended Type ${prefix}help Again!`, embed: helpmsg.embeds[0], components: alldisabledbuttons})
+            helpmsg.edit({content: `Time has ended type ${prefix}help again!`, embed: helpmsg.embeds[0], components: alldisabledbuttons})
         }, 180e3 + 150)
       }
         function allotherembeds(){
@@ -251,24 +257,24 @@ but you can also do \`${prefix}setup-SYSTEM\` e.g. \`${prefix}setup-welcome\``)
             .setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)
             .setTitle(`🔰 Information Commands 🔰`)
             .setDescription(`> ${client.commands.filter((cmd) => cmd.category === "🔰 Info").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
-            .addField(settings.ECONOMY ? "💸 **Economy** | <a:yes:863000006609076245> ENABLED" : "💸 **Economy** | <a:Deny:863000078690811905> DISABLED",`> ${client.commands.filter((cmd) => cmd.category === "💸 Economy").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
-            .addField(settings.SCHOOL ? "🏫 **School** | <a:yes:863000006609076245> ENABLED" : "🏫 **School** | <a:Deny:863000078690811905> DISABLED", `> ${client.commands.filter((cmd) => cmd.category === "🏫 School Commands").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
-            .setFooter(`Page 1 / 9 \nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
+            .addField(settings.ECONOMY ? "💸 **Economy** | ENABLED" : "💸 **Economy** | DISABLED",`> ${client.commands.filter((cmd) => cmd.category === "💸 Economy").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
+            .addField(settings.SCHOOL ? "🏫 **School** | ENABLED" : "🏫 **School** | DISABLED", `> ${client.commands.filter((cmd) => cmd.category === "🏫 School Commands").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
+            .setFooter(`Page 1 / 9  |  Made by: Tomato#6966\nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
           embeds.push(embed0)
           var embed1 = new MessageEmbed()
             .setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)
             .setTitle(`🎶 Music Related Commands :notes:`)
-            .setDescription(`🎶 **Music**${settings.MUSIC ? " | <a:yes:863000006609076245> ENABLED" : " | <a:Deny:863000078690811905> DISABLED"}\n> ${client.commands.filter((cmd) => cmd.category === "🎶 Music").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
-            .addField(settings.MUSIC ? "👀 **Filter** | <a:yes:863000006609076245> ENABLED" : "👀 **Filter** | <a:Deny:863000078690811905> DISABLED", `>>> ${client.commands.filter((cmd) => cmd.category === "👀 Filter").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
-            .addField(settings.MUSIC ? "⚜️ **Custom Queue(s)** | <a:yes:863000006609076245> ENABLED" : "⚜️ **Custom Queue(s)** | <a:Deny:863000078690811905> DISABLED", `${client.commands.filter((cmd) => cmd.category === "⚜️ Custom Queue(s)").map((cmd) => `\`${cmd.name}\``).join(", ")}`.substr(0, 1024))
-            .setFooter(`Page 2 / 9 \nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
+            .setDescription(`🎶 **Music**${settings.MUSIC ? " | ENABLED" : " | DISABLED"}\n> ${client.commands.filter((cmd) => cmd.category === "🎶 Music").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
+            .addField(settings.MUSIC ? "👀 **Filter** | ENABLED" : "👀 **Filter** | DISABLED", `>>> ${client.commands.filter((cmd) => cmd.category === "👀 Filter").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
+            .addField(settings.MUSIC ? "⚜️ **Custom Queue(s)** | ENABLED" : "⚜️ **Custom Queue(s)** | DISABLED", `${client.commands.filter((cmd) => cmd.category === "⚜️ Custom Queue(s)").map((cmd) => `\`${cmd.name}\``).join(", ")}`.substr(0, 1024))
+            .setFooter(`Page 2 / 9  |  Made by: Tomato#6966\nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
           embeds.push(embed1)
           var embed2 = new MessageEmbed()
             .setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)
             .setTitle(`🚫 Administration & Setup Commands 💪`)
             .setDescription(`🚫 **Admin**\n> ${client.commands.filter((cmd) => cmd.category === "🚫 Administration").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
             .addField("💪 **Setup**", `>>> ${client.commands.filter((cmd) => cmd.category === "💪 Setup").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
-            .setFooter(`Page 3 / 9 \nTo see command Descriptions and Information, Type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
+            .setFooter(`Page 3 / 9  |  Made by: milrato.eu\nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
           embeds.push(embed2)
           var embed3 = new MessageEmbed()
             .setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)
@@ -276,36 +282,36 @@ but you can also do \`${prefix}setup-SYSTEM\` e.g. \`${prefix}setup-welcome\``)
             .setDescription(`⚙️ **Settings**\n> ${client.commands.filter((cmd) => cmd.category === "⚙️ Settings").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
             .addField("👑 **Owner**", `>>> ${client.commands.filter((cmd) => cmd.category === "👑 Owner").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
             .addField("⌨️ **Programming**", `${client.commands.filter((cmd) => cmd.category === "⌨️ Programming").map((cmd) => `\`${cmd.name}\``).join(", ")}`.substr(0, 1024))
-            .setFooter(`Page 4 / 9 \nTo see command Descriptions and Information, Type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
+            .setFooter(`Page 4 / 9  |  Made by: milrato.eu\nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
           embeds.push(embed3)
           var embed4 = new MessageEmbed()
             .setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)
             .setTitle(`🎤 Voice & Ranking Commands 📈`)
-            .setDescription(`🎤 **Voice**${settings.VOICE ? " | <a:yes:863000006609076245> ENABLED" : " | <a:Deny:863000078690811905> DISABLED"}\n> ${client.commands.filter((cmd) => cmd.category === "🎤 Voice").map((cmd) => `**Command:**\n>>> \`${cmd.name}\`\n\n**Usage:**\n ${cmd.usage}`)}`)
+            .setDescription(`🎤 **Voice**${settings.VOICE ? " | ENABLED" : " | DISABLED"}\n> ${client.commands.filter((cmd) => cmd.category === "🎤 Voice").map((cmd) => `**Command:**\n>>> \`${cmd.name}\`\n\n**Usage:**\n ${cmd.usage}`)}`)
             .addField("📈 **Ranking**", `>>> ${client.commands.filter((cmd) => cmd.category === "📈 Ranking").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
-            .addField(settings.SOUNDBOARD ? "🔊 **Soundboard** | <a:yes:863000006609076245> ENABLED" : "🔊 **Soundboard** | <a:Deny:863000078690811905> DISABLED", `${client.commands.filter((cmd) => cmd.category === "🔊 Soundboard").map((cmd) => `\`${cmd.name}\``).join(", ")}`.substr(0, 1024))
-            .setFooter(`Page 5 / 9 \nTo see command Descriptions and Information, Type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
+            .addField(settings.SOUNDBOARD ? "🔊 **Soundboard** | ENABLED" : "🔊 **Soundboard** | DISABLED", `${client.commands.filter((cmd) => cmd.category === "🔊 Soundboard").map((cmd) => `\`${cmd.name}\``).join(", ")}`.substr(0, 1024))
+            .setFooter(`Page 5 / 9  |  Made by: milrato.eu\nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
           embeds.push(embed4)
           var embed5 = new MessageEmbed()
             .setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)
             .setTitle(`🎮 Mini Games & Fun Commands 🕹️`)
-            .setDescription(`🕹️ **Fun**${settings.FUN ? " | <a:yes:863000006609076245> ENABLED" : " | <a:Deny:863000078690811905> DISABLED"}\n> ${client.commands.filter((cmd) => cmd.category === "🕹️ Fun").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
-            .addField(settings.MINIGAMES ? "🎮 **Mini Games** | <a:yes:863000006609076245> ENABLED" : "🎮 **Mini Games**| <a:Deny:863000078690811905> DISABLED", `> ${client.commands.filter((cmd) => cmd.category === "🎮 MiniGames").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
-            .setFooter(`Page 6 / 9 \nTo See Command Descriptions And Information, Type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
+            .setDescription(`🕹️ **Fun**${settings.FUN ? " | ENABLED" : " | DISABLED"}\n> ${client.commands.filter((cmd) => cmd.category === "🕹️ Fun").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
+            .addField(settings.MINIGAMES ? "🎮 **Mini Games** | ENABLED" : "🎮 **Mini Games**| DISABLED", `> ${client.commands.filter((cmd) => cmd.category === "🎮 MiniGames").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
+            .setFooter(`Page 6 / 9  |  Made by: milrato.eu\nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
           embeds.push(embed5)
           var embed6 = new MessageEmbed()
             .setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)
-            .setTitle(settings.NSFW ? "🔞 NSFW Commands 🔞 | <a:yes:863000006609076245> ENABLED" : "🔞 NSFW Commands 🔞 | <a:Deny:863000078690811905> DISABLED")
+            .setTitle(settings.NSFW ? "🔞 NSFW Commands 🔞 | ENABLED" : "🔞 NSFW Commands 🔞 | DISABLED")
             .setDescription(`> ${client.commands.filter((cmd) => cmd.category === "🔞 NSFW").map((cmd) => `\`${cmd.name}\``).join(", ")}`)
-            .setFooter(`Page 7 / 9 \nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
+            .setFooter(`Page 7 / 9  |  Made by: milrato.eu\nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
           embeds.push(embed6)
           
           var embed7 = new MessageEmbed()
           .setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)
           .setTitle("🦾 Custom Commands")
-          .setFooter(`Page 8 / 9 \nTo see command Descriptions and Information, Type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
+          .setFooter(`Page 8 / 9  |  Made by: milrato.eu\nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
           let cuc = client.customcommands.get(message.guild.id, "commands");
-          if (cuc.length < 1) cuc = ["NO CUSTOM COMMANDS DEFINED YET, Do It With: `!setup customcommands`"]
+          if (cuc.length < 1) cuc = ["NO CUSTOM COMMANDS DEFINED YET, do it with: `!setup-customcommands`"]
           else cuc = cuc.map(cmd => `\`${cmd.name}\``)
           const items = cuc
             embed7.setTitle(`🦾 **Custom Commands [${cuc[0].includes("NO") ? 0 : items.length}]**`)
@@ -315,11 +321,11 @@ but you can also do \`${prefix}setup-SYSTEM\` e.g. \`${prefix}setup-welcome\``)
         
         var embed8 = new MessageEmbed()
           .setColor(es.color).setThumbnail(es.thumb ? es.footericon : null)
-          .setTitle("Clan Bot")
-          .setImage("https://images-ext-2.discordapp.net/external/lZwUZhaUbP7WORM8Z28z0mk0bGgAhMTbgTtsvo6hB-U/https/cdn.discordapp.com/icons/862914514571886633/1b1535c197934c1b841c6dbf3b3babdc.webp?width=102&height=102")
-          .addField("__**Sakshyam**・Best Servers__", `> ***[Sakshyam](discord.gg/sakshyam)***\n> [**Sakshyam**](https://discord.gg/sakshyam)`)
-          .addField(`**__Bot Creator Information__**`,`>>> 💯 This Bot Has Been Made by:\n**Sakshyam** [Discord](https://discord.com/invite/sakshyam) [Click Here To Get Bot](https://discord.com/oauth2/authorize?client_id=859864681737093140&permissions=8&scope=bot`)
-          .setFooter(`Page 9 / 9 \nTo see command Descriptions and Infomation, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
+          .setTitle("Bot Creator Company Advertisment")
+          .setImage("https://cdn.discordapp.com/attachments/808335747882942464/838362966658514954/standard.gif")
+          .addField(" __**Bero-Host.de**・Best Root Servers__", `> ***[Milrato Development](https://discord.gg/FQGXbypRf8) partnered with:***\n> [**Bero-Host.de**](https://bero-host.de/server/prepaid-kvm-rootserver-paket-mieten)`)
+          .addField(`**__Bot Creator Information__**`,`>>> 💯 This Bot has been made by:\n[**Milrato Development**](https://milrato.eu)・[Discord](https://discord.com/invite/FQGXbypRf8) [Click here to order yourself a own one](https://discord.com/invite/FQGXbypRf8)`)
+          .setFooter(`Page 9 / 9  |  Made by: milrato.eu\nTo see command Descriptions and Information, type: ${config.prefix}help [CMD NAME]`, client.user.displayAvatarURL());
         embeds.push(embed8)
       
  
@@ -330,9 +336,18 @@ but you can also do \`${prefix}setup-SYSTEM\` e.g. \`${prefix}setup-welcome\``)
       console.log(String(e.stack).bgRed)
       return message.channel.send(new MessageEmbed()
         .setColor(es.wrongcolor).setFooter(es.footertext, es.footericon)
-        .setTitle(`<a:Deny:863000078690811905> An error occurred`)
+        .setTitle(`<:no:833101993668771842> An error occurred`)
         .setDescription(`\`\`\`${String(JSON.stringify(e)).substr(0, 2000)}\`\`\``)
       );
     }
   }
 }
+/**
+ * @INFO
+ * Bot Coded by Tomato#6966 | https://github.com/Tomato6966/discord-js-lavalink-Music-Bot-erela-js
+ * @INFO
+ * Work for Milrato Development | https://milrato.eu
+ * @INFO
+ * Please mention Him / Milrato Development, when using this Code!
+ * @INFO
+ */

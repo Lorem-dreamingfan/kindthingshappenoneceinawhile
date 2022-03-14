@@ -1,10 +1,21 @@
-﻿
 const Discord = require("discord.js");
 const colors = require("colors");
 const Enmap = require("enmap");
 const fs = require("fs");
 const Emoji = require("./botconfig/emojis.json")
 const config = require("./botconfig/config.json")
+const express = require('express');
+
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Fuck u Macroshit! Made by Aditya cOdez')
+});
+
+app.listen(3000, () => {
+  console.log('24/7 web server started! MADE BY ADITYA CODEZ');
+});
+
 
 const client = new Discord.Client({
 
@@ -36,12 +47,12 @@ client.memer = new Meme("rwYx7KVLEhC");
 
 client.adenabled = true;
 client.statusad = {
-  name: `?help | Underdevelopment`,
-  type: "PLAYING", 
-  url: "https://discord.gg/sakshyam"
+  name: `-help`,
+  type: "WATCHING", 
+  url: "https://dsc.gg/adityacodez"
 };
 client.spacedot = "・";
-client.textad = "?help | Underdevelopment";
+client.textad = "-help";
 
 
 //Loading discord-buttons
@@ -83,8 +94,22 @@ function requireallhandlers(){
 }requireallhandlers();
 
 
-client.login(require("./botconfig/config.json").token);
+ client.login(process.env.TOKEN);
 
 module.exports.requirehandlers = requirehandlers;
 module.exports.requiresociallogs = requiresociallogs;
 module.exports.requireallhandlers = requireallhandlers;
+
+
+///////////////////////////////////
+
+//💙 Credit Infos 
+//💜 This Project Made By Aditya Codez
+//💛 Must Give Credits While Using 
+//💚 Support Server 
+//♥️ https://discord.gg/z6RMrphPXE
+//🔥 Youtube 
+//🙉 https://youtube.com/adityacodez
+//🏘️ ©Aditya Codez™
+
+///////////////////////////////////

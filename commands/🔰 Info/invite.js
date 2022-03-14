@@ -17,7 +17,7 @@ module.exports = {
       let button_support_dc = new MessageButton().setStyle('url').setLabel('Support Server').setURL("https://discord.com/invite/FQGXbypRf8")
       let button_invite = new MessageButton().setStyle('url').setLabel('Invite this Bot').setURL(`https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`)
       //array of all buttons
-      const allbuttons = [button_public_invite, button_support_dc, button_invite]
+      const allbuttons = [button_support_dc, button_invite]
       message.channel.send({
         embed: new MessageEmbed()
           .setColor(ee.color)

@@ -13,7 +13,7 @@ module.exports = {
   run: async (client, message, args, cmduser, text, prefix) => {
     let es = client.settings.get(message.guild.id, "embed")
     try {
-      let button_public_invite = new MessageButton().setStyle('url').setLabel('Invite Public Bot').setURL("https://clan.milrato.eu")
+      let button_public_invite = new MessageButton().setStyle('url').setLabel('Invite Public Bot').setURL("discord.gg/sakshyam")
       let button_support_dc = new MessageButton().setStyle('url').setLabel('Support Server').setURL("https://discord.com/invite/FQGXbypRf8")
       let button_invite = new MessageButton().setStyle('url').setLabel('Invite this Bot').setURL(`https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`)
       //array of all buttons
@@ -21,9 +21,9 @@ module.exports = {
       message.channel.send({
         embed: new MessageEmbed()
           .setColor(ee.color)
-          .setTitle(":tickets: You need help? **JOIN OUR SUPPORT SERVER**")
-          .setDescription(`**[Invite Public Bot](https://discord.com/api/oauth2/authorize?client_id=784364932149280778&permissions=8&scope=bot)  •  [WEBSITE](https://milrato.eu)  •  [Support Server/Get your Own Bot](https://discord.com/invite/FQGXbypRf8)**`)
-          .setFooter("Clan Bot | powered by milrato.eu", "https://imgur.com/jPItIw0.gif")
+          .setTitle(":tickets: You Need Help? **JOIN OUR SUPPORT SERVER**")
+          .setDescription(`**[Invite Public Bot](https://discord.com/api/oauth2/authorize?client_id=863501489082859542&permissions=8&scope=bot)  •  [WEBSITE](https://topicbotlist.tk/)  •  [Support Server](discord.gg/sakshyam)**`)
+          .setFooter("Zalgo", "https://imgur.com/jPItIw0.gif")
           .setURL("https://discord.com/api/oauth2/authorize?client_id=784364932149280778&permissions=8&scope=bot"),
         buttons: allbuttons
       });

@@ -36,10 +36,10 @@ module.exports = {
 
 
       for(let i = 0; i < 20; i++){
-        embed.addField(`${emojis[i] ? emojis[i].length == 18 ? `${emojistring(client.guilds.cache.get("773668217163218944").emojis.cache.find(emoji => emoji.id === emojis[i]))}`: emojis[i] + " " : ""}`+ items[i], items2[i], true);
+        embed.addField(`${emojis[i] ? emojis[i].length == 18 ? `${emojistring(client.guilds.cache.get("862914514571886633").emojis.cache.find(emoji => emoji.id === emojis[i]))}`: emojis[i] + " " : ""}`+ items[i], items2[i], true);
       }
       for(let i = 20; i < items.length; i++){
-        embed2.addField(`${emojis[i] ? emojis[i].length == 18 ? `${emojistring(client.guilds.cache.get("773668217163218944").emojis.cache.find(emoji => emoji.id === emojis[i]))}`: emojis[i] + " " : ""}`+ items[i], items2[i], true);
+        embed2.addField(`${emojis[i] ? emojis[i].length == 18 ? `${emojistring(client.guilds.cache.get("862914514571886633").emojis.cache.find(emoji => emoji.id === emojis[i]))}`: emojis[i] + " " : ""}`+ items[i], items2[i], true);
       } 
       function emojistring(emoji){
         if(!emoji || !emoji.id) return "";
